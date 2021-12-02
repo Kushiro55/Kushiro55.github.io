@@ -121,19 +121,50 @@ border-radius: 15px;
 		<div style="padding-left: 75%;padding-top: 15%; background: #FFFFFF; width:400px; height:458px;" > 
 			<div style='float: left; width: 100%; height: calc((100% - 0px) * (100 / 100)); outline: 1px solid #000; overflow: hidden;'>
 				<div style='float: left; width: 100%; height: 100%; outline: 1px solid #000; overflow: hidden;'>
-						<img src="imgs/logo.png" class="Image">
+						<img src="imgs/logo.png" class="Image"> </img>
 
 						
 							<label for="us" class="Label">Usuario</label>		
-							<input type="email" name="user" class="TextInput">
+							<input id="users" type="email" name="user" class="TextInput">
 
 							<label for="ps" class="Label">Contraseña</label>		
-							<input type="password" name="pass" class="TextInput">	
+							<input id="userpass" type="password" name="pass" class="TextInput">	
+							<br><input type="checkbox" name="SaveData" class="ChkBox"><label for="svData" class="Label2">Recordar Datos</label>		
 							<br>
-							<input type="checkbox" name="SaveData" class="ChkBox"><label for="svData" class="Label2">Recordar Datos</label>		
+														<input id="login" style="cursor: pointer;" type="submit" class="Button">
 							<br>
-							<a href="MainMenu/Menu.html"> <input style="cursor: pointer;" type="submit" class="Button"><a/>
-							<br><label for="submit" class="Label3">Para poder registrarse debes contactar con tu institución educativa.</label>		
+							<label id="labelmsg" for="submit" class="Label3">Para poder registrarse debes contactar con tu institución educativa.</label>	
+							<script>
+
+
+						document.getElementById('login').onclick = function() {
+  							var user = document.getElementById('users');
+  							var uPass = document.getElementById('userpass');
+  							var msg = document.getElementById('labelmsg');
+							var acc="admin@udemorelia.com";
+							var pass="admin";
+							 
+							if (user.value!=acc){
+								msg.style.color='red';
+								msg.innerHTML = '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNo se ha encontrado ese usuario.';
+
+							}
+							if (user.value==acc && uPass.value!=pass){
+								msg.style.color='red';
+								msg.innerHTML = '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspContraseña Incorrecta';
+	
+								}
+							if (user.value==acc && uPass.value==pass){
+								window.location = "MainMenu/Menu.html";
+								msg.innerHTML = '';
+								}
+								
+						};
+							
+							
+						</script>
+	
+						
 				</div>
 
 			</div>
