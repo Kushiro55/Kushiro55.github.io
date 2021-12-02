@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<head>
+	<style type="text/css">
+		.Image {
+left: 50px;
+top: 10px;
+width: 238px;
+height: 100px;
+border: 1px solid #000000;
+margin-left: 20%;
+margin-top: 10%;
+margin-bottom: 10%;
+}
+
+.Label {
+
+width: 100px;
+height: 25px;
+color: #616161;
+font-family: 'Source Sans Pro';
+font-size: 15px;
+font-weight: normal;
+font-style: normal;
+text-decoration: none;
+text-align: left;
+margin-left: 30%;
+margin-bottom: 10%;
+}
+
+.Label2 {
+width: 100px;
+height: 25px;
+color: #616161;
+font-family: 'Source Sans Pro';
+font-size: 15px;
+font-weight: normal;
+font-style: normal;
+text-decoration: none;
+text-align: left;
+margin-left: 5px;
+margin-bottom: 10%;
+}
+
+.Label3 {
+width: 100px;
+height: 25px;
+color: #616161;
+font-family: 'Source Sans Pro';
+font-size: 13px;
+font-weight: normal;
+font-style: normal;
+text-decoration: none;
+text-align: left;
+margin-left: 7%;
+
+}
+
+.TextInput {
+margin-left: 24%;
+margin-top: 5px;
+margin-bottom: 22px;
+left: 551px;
+top: 427px;
+width: 200px;
+height: 10px;
+color: #000000;
+font-family: 'Source Sans Pro';
+font-size: 16px;
+font-weight: normal;
+font-style: normal;
+text-decoration: none;
+text-align: left;
+padding: 5px;
+background: #FFFFFF;
+border: 2px solid #616161;
+border-radius: 15px;
+outline: none;
+}
+.ChkBox {
+margin-left: 35%;
+margin-bottom: 17px;
+width: 10px;
+height: 10px;
+color: #000000;
+font-family: 'Source Sans Pro';
+font-size: 16px;
+font-weight: normal;
+font-style: normal;
+text-decoration: none;
+text-align: left;
+padding: 5px;
+background: #FFFFFF;
+border: 2px solid #616161;
+border-radius: 15px;
+}
+
+.Button {
+margin-left: 40%;
+margin-bottom: 10px;
+left: 603px;
+top: 481px;
+width: 100px;
+height: 40px;
+color: #000000;
+font-family: 'Source Sans Pro';
+font-size: 12px;
+font-weight: normal;
+font-style: normal;
+text-decoration: none;
+text-align: center;
+background: #FFFFFF;
+border: 1px solid #616161;
+border-radius: 15px;
+}
+
+	</style>
+</head>
+<body>
+
+	<div style="width:600px; height:558px;">
+		<div style="padding-left: 75%;padding-top: 15%; background: #FFFFFF; width:400px; height:458px;" > 
+			<div style='float: left; width: 100%; height: calc((100% - 0px) * (100 / 100)); outline: 1px solid #000; overflow: hidden;'>
+				<div style='float: left; width: 100%; height: 100%; outline: 1px solid #000; overflow: hidden;'>
+						<img src="imgs/logo.png" class="Image">
+
+						<form action="MainMenu/Menu.html" method="POST">
+							<label for="us" class="Label">Usuario</label>		
+							<input type="email" name="user" class="TextInput">
+
+							<label for="ps" class="Label">Contraseña</label>		
+							<input type="password" name="pass" class="TextInput">	
+							<br><input type="checkbox" name="SaveData" class="ChkBox"><label for="svData" class="Label2">Recordar Datos</label>		<br>
+							<input type="submit" value="Ingresar" class="Button">
+							<br><label for="submit" class="Label3">Para poder registrarse debes contactar con tu institución educativa.</label>		
+						</form>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+</body>
+</html>

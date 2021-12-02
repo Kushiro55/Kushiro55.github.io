@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://kit.fontawesome.com/28677fb112.js" crossorigin="anonymous"></script>
+</head>
+<title>MainMenuPrototype</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+
+
+
+.black_overlay {
+  display: none;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1001;
+  -moz-opacity: 0.8;
+  opacity: .60;
+  filter: alpha(opacity=80);
+}
+.white_content {
+  display: none;
+  position: fixed;
+  top: 5%;
+  left: 15%;
+  width: 70%;
+  height: 87%;
+  padding: 16px;
+  border: none;
+  border-radius:15px;
+  background-color: white;
+  z-index: 1002;
+  overflow: auto;
+}
+
+.SearchBoxArea input {
+margin-right:10px;
+color: #000000;
+font-family: "Open Sans", sans-serif;
+font-size: auto;
+font-weight: normal;
+font-style: normal;
+text-decoration: none;
+text-align: left;
+background: white;
+border: none;
+border-radius: 50px;
+outline:none;
+}
+
+.cursorPointer {
+cursor: pointer;
+}
+button {
+margin-right:10px;
+color: #000000;
+font-family: "Open Sans", sans-serif;
+font-size: auto;
+font-weight: normal;
+font-style: normal;
+text-decoration: none;
+text-align: left;
+background: white;
+border: none;
+border-radius: 50px;
+outline:none;
+}
+
+.roundedButtons {
+margin-right:10px;
+color: #000000;
+font-family: "Open Sans", sans-serif;
+font-size: 14px;
+font-weight: normal;
+font-style: normal;
+text-decoration: none;
+text-align: left;
+background: white;
+border: none;
+border-radius: 50px;
+outline:none;
+}
+
+.SearchBoxArea{
+margin-left:300px;
+color: #000000;
+font-family: "Open Sans", sans-serif;
+font-size: 14px;
+font-weight: normal;
+font-style: normal;
+text-decoration: none;
+text-align: left;
+background: white;
+border: none;
+border-radius: 50px;
+outline:none;
+padding-left:7px;
+
+}
+
+</style>
+<body class="w3-theme-l5">
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="Menu.html" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>Inicio</a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Carrera">Ingenieria Videojuegos</a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Grado y Grupo">Septimo B</a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Mensajes"><i class="fa fa-envelope"></i></a>
+  
+  
+  <div class="w3-dropdown-hover w3-hide-small">
+    <button class="w3-button w3-padding-large" title="Notificaciones"><i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-green">3</span></button>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px;font-size:14px">
+      <a href="javascript:void(0)" class="w3-bar-item w3-button" style="cursor: pointer;" onclick="document.getElementById('mlight').style.display='block';document.getElementById('mfade').style.display='block';">Tienes actividades proximas</a>
+      <a href="#" class="w3-bar-item w3-button">Se acerca la semna de evaluaciones</a>
+      <a href="#" class="w3-bar-item w3-button">Tu actividad X ha sido calificada</a>
+    </div>
+
+  </div>
+    
+  <div class="w3-bar-item w3-hide-small w3-padding-large w3-margin-right w3-large" style="padding-right:10px;">
+    	<form action="/searchResult.php">
+      	<input class="SearchBoxArea" type="text" placeholder="Busqueda..." name="search">
+      	<button class="roundedButtons" type="submit"><i class="fa fa-search"></i></button>
+    	</form>
+  </div>
+
+  <a href="Menu.html" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
+    <img src="avatar2.png" class="w3-circle" style="height:23px;width:23px" alt="Avatar">
+  </a>
+ </div>
+</div>
+
+<!-- Navbar on small screens -->
+<div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+  <a href="https://www.google.com" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
+</div>
+
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
+
+   <div id="mlight" style="text-align: center" class="white_content">  <a href="javascript:void(0)" onclick="document.getElementById('mlight').style.display='none';document.getElementById('mfade').style.display='none'">Cerrar</a>
+  </div>
+  <div id="mfade" class="black_overlay"></div>
+
+
+  <!-- The Grid -->
+  <div class="w3-row">
+    <!-- Left Column -->
+    <div class="w3-col m3">
+      <!-- Profile -->
+      <div class="w3-card w3-round w3-white">
+        <div class="w3-container">
+         <h4 class="w3-center">Mi Perfil</h4>
+         <p class="w3-center"><img src="avatar3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+         <hr>
+         <p><i class="fas fa-graduation-cap fa-fw w3-margin-right w3-text-theme"></i> 7 Semestre</p>
+         <p><i class="fas fa-laptop-code fa-fw w3-margin-right w3-text-theme"></i> Ingenieria en Videojuegos</p>
+         <p><a href="javascript:void(0)" style="cursor: pointer;" onclick="document.getElementById('mlight').style.display='block';document.getElementById('mfade').style.display='block';"><i id="gCalendar" class="far fa-calendar-alt fa-fw w3-margin-right w3-text-theme"></i></a> 
+         	<script> 
+         		n =  new Date(); 
+				y = n.getFullYear(); 
+				m = n.getMonth() + 1; 
+				d = n.getDate(); 
+				const monthArr = ["Enero", "Febrero","Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+				m=monthArr[m-1];
+				document.write(d + " de " + m + " del " + y); 
+			</script></p>
+
+        </div>
+      </div>
+      <br>
+      
+      <!-- Accordion -->
+      <div class="w3-card w3-round">
+        <div class="w3-white">
+          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> Mis Materias</button>
+          <div id="Demo1" class="w3-hide w3-container">
+            <p class="cursorPointer" id="Mat1">Matematicas</p>
+            <p class="cursorPointer" id="Mat2">Ingles</p>
+          </div>
+          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> Mis Eventos</button>
+          <div id="Demo2" class="w3-hide w3-container">
+            <p>No hay ningun evento</p>
+          </div>
+          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fas fa-folder fa-fw w3-margin-right"></i> Mis Archivos</button>
+          <div id="Demo3" class="w3-hide w3-container">
+         <div class="w3-row-padding">
+         <br>
+           <div class="w3-half">
+             <img src="lights.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="nature.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="mountains.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="forest.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="nature.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="snow.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+         </div>
+          </div>
+        </div>      
+      </div>
+      <br>
+      
+      <!-- Interests --> 
+      <div class="w3-card w3-round w3-white w3-hide-small">
+        <div class="w3-container">
+          <p>Insignias</p>
+          <p>
+            <span class="w3-tag w3-small w3-theme-d5">A tiempo</span>
+            <span class="w3-tag w3-small w3-theme-d4">Impecable</span>
+            <span class="w3-tag w3-small w3-theme-d3">Siempre aquí</span>
+            <span class="w3-tag w3-small w3-theme-d2">Participativo</span>
+            <span class="w3-tag w3-small w3-theme-d1">Ejemplo a seguir</span>
+            <!-- w3-theme-d5(d1 a d5), w3-theme-10(10-15) --> 
+            
+          </p>
+        </div>
+      </div>
+      <br>
+      
+      <!-- Alert Box -->
+      <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
+        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
+          <i class="fa fa-remove"></i>
+        </span>
+        <p><strong>Hey!</strong></p>
+        <p>Tu actividad X está pendiente de entrega.</p>
+      </div>
+    
+    <!-- End Left Column -->
+    </div>
+    
+    <!-- Middle Column -->
+    <div class="w3-col m7" id="mainSection">
+    <!-- Function Scripts -->
+  <script src="https://meet.jit.si/external_api.js"></script>
+  
+  <script>
+    /*
+            var domain = "meet.jit.si";
+            var options = {
+                roomName: "PrototypeMathTesting",
+                width: 600,
+                height: 680,
+                parentNode.prepend:  document.getElementById('midColum'),
+                configOverwrite: {enableWelcomePage: false},
+                interfaceConfigOverwrite: { SHOW_CHROME_EXTENSION_BANNER: false, SHOW_DEEP_LINKING_IMAGE: false, SHOW_JITSI_WATERMARK: false, HIDE_DEEP_LINKING_LOGO: false}
+}
+            var api = new JitsiMeetExternalAPI(domain, options);
+    
+*/
+        </script>
+
+
+  <script>
+
+window.onload = function() {
+   var iframe1 = document.createElement('iframe');
+   iframe1.style.border = 0;
+   iframe1.width = 736.238;
+   iframe1.height = 550;
+   iframe1.className = 'w3-container w3-card w3-white w3-round w3-margin';
+   iframe1.id = "mainFrame"
+   iframe1.style.display='none';
+   
+
+   document.getElementById('mainSection').prepend(iframe1);
+
+
+
+var iframe2 = document.createElement('iframe');
+   iframe2.style.border = 0;
+   iframe2.width= 736.238;
+   iframe2.height = 500;
+   iframe2.className = 'w3-container w3-card w3-white w3-round w3-margin';
+   iframe2.src='https://calendar.google.com/calendar/embed?src=409t4ahd82aecg54m44m6tvel0%40group.calendar.google.com&ctz=America%2FMexico_City';
+   document.getElementById('mlight').append(iframe2);
+};
+
+
+var toggleEng;
+document.getElementById('Mat1').onclick = function() {
+   var iframe1 = document.getElementById('mainFrame');   
+   /*iframe1.style.border = 0;
+   iframe1.width = 736.238;*/
+   iframe1.className = 'w3-container w3-card w3-white w3-round w3-margin';
+   iframe1.allow="camera https://meet.jit.si/PrototypeMathTesting; microphone https://meet.jit.si/PrototypeMathTesting";
+ //  iframe1.id = "mainFrame"
+   //iframe1.style.display='block'; 
+   //document.getElementById('mainSection').prepend(iframe1);
+    var x = document.getElementById("mainFrame");
+    var y = document.getElementById("midColum");
+  if (x.style.display === "none" || toggleEng==0 && x.style.display == "block") {
+    
+    x.style.display = "block";
+    toggleEng = 1;
+    y.style.display="none";
+    iframe1.src = 'https://meet.jit.si/PrototypeMathTesting';
+  } else {
+    iframe1.allow="none"
+    x.style.display = "none";
+    y.style.display="block";
+  }
+
+};
+
+
+
+
+document.getElementById('Mat2').onclick = function() {
+  
+   var iframe1 = document.getElementById('mainFrame');   
+   /*iframe1.style.border = 0;
+   iframe1.width = 736.238;*/
+   iframe1.className = 'w3-container w3-card w3-white w3-round w3-margin';
+   iframe1.allow="camera https://meet.jit.si/PrototypeEngTesting; microphone https://meet.jit.si/PrototypeEngTesting";
+   var x = document.getElementById("mainFrame");
+   var y = document.getElementById("midColum");
+  if (x.style.display === "none" || toggleEng != 0 && x.style.display == "block") {
+    x.style.display = "block";
+    toggleEng=0;
+    y.style.display="none";
+    iframe1.src = 'https://meet.jit.si/PrototypeEngTesting';
+  } else {
+    x.style.display = "none";
+    y.style.display="block";
+  }
+
+};
+
+</script>
+      
+      
+<div id="midColum">
+      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+        <img src="avatar2.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+        <span class="w3-right w3-opacity">1 min</span>
+        <h4>John Doe</h4><br>
+        <hr class="w3-clear">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-half">
+              <img src="lights.jpg" style="width:100%" alt="Northern Lights" class="w3-margin-bottom">
+            </div>
+            <div class="w3-half">
+              <img src="nature.jpg" style="width:100%" alt="Nature" class="w3-margin-bottom">
+          </div>
+        </div>
+        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
+      </div>
+      
+      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+        <img src="avatar5.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+        <span class="w3-right w3-opacity">16 min</span>
+        <h4>Jane Doe</h4><br>
+        <hr class="w3-clear">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
+      </div>  
+
+      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+        <img src="avatar6.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+        <span class="w3-right w3-opacity">32 min</span>
+        <h4>Angie Jane</h4><br>
+        <hr class="w3-clear">
+        <p>Have you seen this?</p>
+        <img src="nature.jpg" style="width:100%" class="w3-margin-bottom">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
+      </div> 
+</div>
+
+    <!-- End Middle Column -->
+    </div>
+    
+    <!-- Right Column -->
+    <div class="w3-col m2">
+      <div class="w3-card w3-round w3-white w3-center">
+        <div class="w3-container">
+          <p>Eventos Proximos:</p>
+          <img src="forest.jpg" alt="Forest" style="width:100%;">
+          <p><strong>Semana de Evaluaciones</strong></p>
+          <p>Horario de clases de sus respectivas materias</p>
+          <p><button class="w3-button w3-block w3-theme-l4">Info</button></p>
+        </div>
+      </div>
+      <br>
+      
+      
+      
+      
+      
+
+      
+      
+      
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+<!-- End Page Container -->
+</div>
+<br>
+
+<!-- Footer -->
+<footer class="w3-container w3-theme-d3 w3-padding-16">
+  <h5>Footer</h5>
+</footer>
+
+<footer class="w3-container w3-theme-d5">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+ 
+<script>
+// Accordion
+function myFunction(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-theme-d1";
+  } else { 
+    x.className = x.className.replace("w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-theme-d1", "");
+  }
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html> 
