@@ -13,8 +13,9 @@
 <style>
 html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 
-
-
+.transparent_background{
+	background-color: transparent;
+}
 .black_overlay {
   display: none;
   position: fixed;
@@ -155,7 +156,7 @@ padding-left:7px;
 <!-- Page Container -->
 <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
 
-   <div id="mlight" style="text-align: center" class="white_content">  <a href="javascript:void(0)" onclick="document.getElementById('mlight').style.display='none';document.getElementById('mfade').style.display='none'">Cerrar</a>
+   <div id="mlight" style="text-align: center;background-color: transparent; color: white" class="white_content">  <a href="javascript:void(0)" onclick="document.getElementById('mlight').style.display='none';document.getElementById('mfade').style.display='none'">Cerrar</a>
   </div>
   <div id="mfade" class="black_overlay"></div>
 
